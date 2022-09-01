@@ -1,0 +1,7 @@
+{
+  "vetur.format.defaultFormatter.js": "none",
+  "vetur.format.defaultFormatter.html": "none",
+  "vetur.format.defaultFormatter.css": "none",
+  "vetur.format.defaultFormatter.sass": "none",
+  "editor.formatOnSave": true
+}
