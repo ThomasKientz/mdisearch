@@ -1,6 +1,6 @@
 # MDI Search
 
-MDI Search is a lightning fast search engine powered by [Algolia](https://www.algolia.com/) to help developers find the best [MDI icons](https://materialdesignicons.com) and building UIs.
+MDI Search is a lightning fast search engine powered by [Algolia](https://www.algolia.com/) to help developers find the best icons and create stunning user interfaces.
 
 Finding icons is a pain. Developers need to quickly find relevant icons for a given context and don't want to scroll through thousands of icons and searching for an exact icon name. For a "success" page, they want an icon expressing success like the `check` icon. Searching for "success", **should** returns "check" icons, and it should be typo tolerant too.
 
