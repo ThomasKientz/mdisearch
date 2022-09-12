@@ -70,19 +70,21 @@
         >
           <ais-configure :hits-per-page.camel="100" />
           <ais-search-box>
-            <div slot-scope="{ currentRefinement, isSearchStalled, refine }">
-              <v-layout align-center>
-                <v-text-field
-                  prepend-inner-icon="mdi-magnify"
-                  label="Search"
-                  :value="currentRefinement"
-                  :loading="isSearchStalled"
-                  autofocus
-                  clearable
-                  hint="Icon name or synonym"
-                  @input="refine($event)"
-                />
-              </v-layout>
+            <div
+              slot-scope="{ currentRefinement, isSearchStalled, refine }"
+              class="d-flex align-center"
+            >
+              <v-text-field
+                prepend-inner-icon="mdi-magnify"
+                label="Search"
+                :value="currentRefinement"
+                :loading="isSearchStalled"
+                autofocus
+                clearable
+                hint="Icon name or synonym"
+                @input="refine($event)"
+              />
+              <ais-powered-by class="ml-2" />
             </div>
           </ais-search-box>
           <ais-hits>
@@ -142,6 +144,7 @@ import {
   AisSearchBox,
   AisPagination,
   AisStats,
+  AisPoweredBy,
 } from "vue-instantsearch";
 import algoliasearch from "algoliasearch";
 
@@ -153,6 +156,7 @@ export default {
     AisSearchBox,
     AisPagination,
     AisStats,
+    AisPoweredBy,
     AboutDialog: () => import("@/components/AboutDialog.vue"),
   },
 
