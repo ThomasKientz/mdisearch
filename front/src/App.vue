@@ -70,22 +70,24 @@
         >
           <ais-configure :hits-per-page.camel="100" />
           <ais-search-box>
-            <div
-              slot-scope="{ currentRefinement, isSearchStalled, refine }"
-              class="d-flex align-center"
+            <template
+              #default="{
+                currentRefinement,
+                isSearchStalled,
+                refine,
+                setIsFocus,
+              }"
             >
-              <v-text-field
-                prepend-inner-icon="mdi-magnify"
-                label="Search"
+              <SearchInput
+                ref="searchInput"
                 :value="currentRefinement"
                 :loading="isSearchStalled"
-                autofocus
-                clearable
-                hint="Icon name or synonym"
+                @focus="setIsFocus(true)"
+                @blur="setIsFocus(false)"
                 @input="refine($event)"
               />
               <ais-powered-by class="ml-2" />
-            </div>
+            </template>
           </ais-search-box>
           <ais-hits>
             <v-row slot-scope="{ items }" justify="space-between" wrap>
@@ -145,13 +147,15 @@ import {
   AisPagination,
   AisStats,
   AisPoweredBy,
-} from "vue-instantsearch";
-import algoliasearch from "algoliasearch";
+} from "./algolia/index.js";
+import SearchInput from "@/components/SearchInput.vue";
+import algoliasearch from "algoliasearch/lite";
 
 export default {
   name: "VueApp",
 
   components: {
+    SearchInput,
     AisInstantSearch,
     AisSearchBox,
     AisPagination,

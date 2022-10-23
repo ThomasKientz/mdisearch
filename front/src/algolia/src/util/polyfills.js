@@ -1,0 +1,2 @@
+function e(e){for(var r=arguments,n=1;n<arguments.length;n++){var o=null!=r[n]?r[n]:{},c=Object.keys(o);"function"==typeof Object.getOwnPropertySymbols&&(c=c.concat(Object.getOwnPropertySymbols(o).filter(function(e){return Object.getOwnPropertyDescriptor(o,e).enumerable}))),c.forEach(function(r){t(e,r,o[r])})}return e}function t(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}export{e as _objectSpread};
+//# sourceMappingURL=polyfills.js.map

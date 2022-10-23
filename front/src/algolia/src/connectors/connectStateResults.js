@@ -1,0 +1,2 @@
+import{_objectSpread as t}from"../util/polyfills.js";export default function(n,e){return void 0===e&&(e=function(){}),function(s){return void 0===s&&(s={}),{init:function(t){var e=t.instantSearchInstance;n({state:void 0,results:void 0,instantSearchInstance:e,widgetParams:s},!0)},render:function(e){var a=e.results,i=e.instantSearchInstance,r=e.state,o=t({},a),c=t({},r);n({results:o,state:c,instantSearchInstance:i,widgetParams:s},!1)},dispose:function(){e()}}}}
+//# sourceMappingURL=connectStateResults.js.map
