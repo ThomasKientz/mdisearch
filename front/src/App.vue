@@ -69,24 +69,17 @@
           :search-client="searchClient"
         >
           <ais-configure :hits-per-page.camel="100" />
-          <ais-search-box>
-            <div
-              slot-scope="{ currentRefinement, isSearchStalled, refine }"
-              class="d-flex align-center"
-            >
-              <v-text-field
-                prepend-inner-icon="mdi-magnify"
-                label="Search"
-                :value="currentRefinement"
-                :loading="isSearchStalled"
-                autofocus
-                clearable
-                hint="Icon name or synonym"
-                @input="refine($event)"
-              />
-              <ais-powered-by class="ml-2" />
-            </div>
-          </ais-search-box>
+          <div class="d-flex align-center">
+            <ais-search-box
+              class="flex-grow-1"
+              placeholder="Search"
+              submit-title="string"
+              reset-title="string"
+              :autofocus="true"
+              :show-loading-indicator="true"
+            />
+            <ais-powered-by class="ml-2" />
+          </div>
           <ais-hits>
             <v-row slot-scope="{ items }" justify="space-between" wrap>
               <v-col v-for="item in items" :key="item.objectID">
